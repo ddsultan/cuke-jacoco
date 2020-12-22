@@ -25,7 +25,8 @@ dependencies {
 
     // Use JUnit Jupiter API for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
-
+    testImplementation 'io.cucumber:cucumber-java:6.9.1'
+    testImplementation 'io.cucumber:cucumber-junit:6.9.1'
     // Use JUnit Jupiter Engine for testing.
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
@@ -59,4 +60,11 @@ jacocoTestReport {
         fileTree(dir: "build/classes/java/main")
             .filter({file -> !file.name.contains('App') })
     )
+}
+
+task cucumber(type: Test) {
+    description = "Execute cucumber BDD tests."
+    group = "verification"
+    include "**/*CucumberIT*"
+    reports.html.enabled = false
 }
