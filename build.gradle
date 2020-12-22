@@ -52,3 +52,10 @@ jacocoTestCoverageVerification {
         }
     }
 }
+
+jacocoTestReport {
+    classDirectories.setFrom(
+        fileTree(dir: "build/classes/java/main")
+            .filter({file -> !file.name.contains('App') })
+    )
+}
