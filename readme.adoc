@@ -1,6 +1,8 @@
 = Cucumber test coverage with Jacoco on Gradle
 
-=== After running the following Jacoco generates `test.exec` binary file under `build/jacoco`.
+=== Code coverage with Jacoco
+
+* After running the following Jacoco generates `test.exec` binary file under `build/jacoco`.
 
 [source,sh]
 ----
@@ -19,7 +21,10 @@ The generated `.exec` file required as a base for other reports e.g. HTML report
 ./gradlew jacocoTestReport
 ----
 
-=== Running the `cucumber` task cucumber generates summary of test results in Terminal and HTML report as well
+=== Feature tests with Cucumber
+
+* Running the `cucumber` task cucumber generates summary of test results in Terminal and HTML report as well
+
 [source,sh]
 ----
 ./gradlew cucumber --info
